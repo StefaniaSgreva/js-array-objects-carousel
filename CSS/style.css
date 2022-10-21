@@ -39,3 +39,33 @@ body{
     width: 100%;
     object-fit: cover;
 }
+.arrow-left{
+    position: fixed;
+    left: 15%;
+}
+.arrow-right{
+    position: fixed;
+    right: 15%;
+}
+div[class^="arrow-"] i {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--blue);
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div[class^="arrow-"] i:hover {
+    color: var(--green);
+    border: 4px solid var(--green);
+    border-radius: 50%;
+}
+
+div[class^="arrow-"] i:active {
+    background-color: var(--green);
+    color: var(--white);
+}
