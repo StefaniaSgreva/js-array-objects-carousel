@@ -1,0 +1,17 @@
+/* GENERAL STYLES */
+:root{
+    --pink: #f8c3cb;
+    --blue: #95c3ec;
+    --green: #0CF2A2;
+    --yellow: #fad445;
+    --white: #ffffff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
