@@ -62,28 +62,7 @@ const images = [
 
 // console.log(images);
 
-// DOM --> PRINT IMAGES
-const bigImgCont = document.querySelector('.slider');
 
-// ARRAY (big slider) --> DOM
-function printImg(images, bigImgCont){
-    
-    for (let i = 0; i < images.length; i++){
-        const place = images[i];
-        // console.log('place');
-        bigImgCont.innerHTML += `
-        <div class="big-active-img">
-            <img src="${place.url}" alt="${place.title}">
-            <div class="text">
-                <h2>${place.title}</h2>
-                <p>${place.description}</p>
-            </div>
-        </div>
-        `; 
-    }
-}
-//INVOCO LA FUNZIONE
-// printImg(images, bigImgCont);
 
 
 
