@@ -18,21 +18,59 @@
      <link rel="stylesheet" href="./CSS/style.css">
     <title>Carousel</title>
 </head>
-<body>
-   <div class="container">
-        <div class="slider">
-            <div class="big-active-img">
-                <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="">
-            </div>
-        </div>
-        <div class="arrow-left">
-            <i class="fas fa-chevron-left"></i>
-        </div>
+<body>  
+    <div class="container">
+        <div id="slider" class="row row-col-12">
            
-        <div class="arrow-right">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-   </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                
+                <div class="arrow-back me-5">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+
+                <!-- big slider  -->
+                <div class="slide1 showing">
+                    
+                    <div class="slide-image">
+                        <div class="slide-text">
+                            <h2>Svezia</h2>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.</p>
+                        </div>
+                        <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="">
+                    </div> 
+                    <!-- tumbnails carousel  -->
+                    <div class="slide-thumbnails col">
+                        <div class="row row-cols-5 g-0">
+                            <div class="thumbnail col">
+                                <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="">
+                            </div>
+                            <div class="thumbnail col">
+                                <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="">
+                            </div>
+                            <div class="thumbnail col">
+                                <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="">
+                            </div>
+                            <div class="thumbnail col">
+                                <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="">
+                            </div>
+                            <div class="thumbnail col">
+                                <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+
+                <div class="arrow-forward ms-5">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+
+            </div>  
+
+             
+         
+    </div>
+   
     <!-- SCRIPT JS -->
     <script src="./JS/script.js"></script>
 </body>

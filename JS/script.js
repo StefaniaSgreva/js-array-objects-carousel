@@ -7,22 +7,22 @@ Dato un array di oggetti letterali con:
  - descrizione
 Creare un carosello come nella foto allegata.
 
-Milestone 0:
+//*Milestone 0:
 Come sempre focalizziamoci prima sulla creazione del markup statico: 
 costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
 
-Milestone 1:
+//!Milestone 1:
 Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
 Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile 
 e dovremo aggiungervi titolo e testo.
 
-Milestone 2:
+//!Milestone 2:
 Aggiungere il **ciclo infinito** del carosello. 
 Ovvero se la miniatura attiva è la prima e l'utente clicca la freccia verso destra, 
 la miniatura che deve attivarsi sarà l'ultima e viceversa 
 per l'ultima miniatura se l'utente clicca la freccia verso sinistra.
 
-BONUS 1:
+//!BONUS 1:
 Aggiungere le thumbnails (sottoforma di miniatura) ed al click attivare l’immagine corrispondente.
 BONUS 2:
 Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
@@ -59,3 +59,31 @@ const images = [
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
     },
 ];
+
+// console.log(images);
+
+// DOM --> PRINT IMAGES
+const bigImgCont = document.querySelector('.slider');
+
+// ARRAY (big slider) --> DOM
+function printImg(images, bigImgCont){
+    
+    for (let i = 0; i < images.length; i++){
+        const place = images[i];
+        // console.log('place');
+        bigImgCont.innerHTML += `
+        <div class="big-active-img">
+            <img src="${place.url}" alt="${place.title}">
+            <div class="text">
+                <h2>${place.title}</h2>
+                <p>${place.description}</p>
+            </div>
+        </div>
+        `; 
+    }
+}
+//INVOCO LA FUNZIONE
+// printImg(images, bigImgCont);
+
+
+
