@@ -13,29 +13,34 @@
 }
 .debug{
     border: 2px solid black;
+    /* background-color: #0CF2A2; */
 }
 body{
     font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
     background-color: var(--white);
 
 }
-.container{
+.wrapper{
     height: 100vh;
-    display: grid;
 }
-#slider {
-    margin: auto;
-}
-.slide-image{
-    position: relative;
+.centered{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 450px;
-    display: none;
 }
-.slide-image.active{
+/* BIG SLIDER */
+.box-img{
+    position: relative;
+    width: 70%;
+    height: 600px;
+    /* display: none; */
+}
+.box-img.active{
     display: block;
 }
-.slide-image img{
+.slide_img{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -49,6 +54,31 @@ body{
     text-align: end;
     text-shadow: 3px 2px 2px black;
 }
+/* THUMBNAILS */
+.border-top{
+    border-top: 1px solid var(--white);
+}
+.box-thumbnails{
+    width: 70%;
+    margin: 0 auto;
+}
+.thumbnails{
+    background-color: black;
+    width: calc(100% / 5);
+    
+}
+.thumbnail{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.thumbnail.active_thumbnail{
+    border: 1px solid var(--white);
+    opacity: 1;
+}
+/* ARROW*/
 div[class^="arrow-"] i {
     font-size: 1.5em;
     cursor: pointer;
@@ -69,24 +99,7 @@ div[class^="arrow-"] i:active {
     background-color: var(--green);
     color: var(--white);
 }
-.border-top{
-    border-top: 1px solid var(--white);
-}
-.thumbnail{
-    background-color: black;
-    
-}
-.thumb{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5;
-    cursor: pointer;
-}
-.thumb.active_thumb{
-    border: 1px solid var(--white);
-    opacity: 1;
-}
+
 
 
 

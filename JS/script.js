@@ -60,9 +60,5 @@ const images = [
     },
 ];
 
-// console.log(images);
-
-
-
 
 
