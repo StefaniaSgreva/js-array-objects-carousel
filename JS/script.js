@@ -11,7 +11,7 @@ Creare un carosello come nella foto allegata.
 Come sempre focalizziamoci prima sulla creazione del markup statico: 
 costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
 
-//!Milestone 1:
+//*Milestone 1:
 Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
 Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile 
 e dovremo aggiungervi titolo e testo.
@@ -60,9 +60,13 @@ const images = [
     },
 ];
 
+// VARIABILI
 const imagesHtml = document.querySelector('.mycontainer');
 const thumbnailsHtml = document.querySelector('.box-thumbnails'); 
+const btnF = document.querySelector('.arrow-forward');
+const btnB = document.querySelector('.arrow-back');
 
+// STAMPO NEL DOM CON UN LOOP
 let activeImage = 0;
 for (let i = 0; i < images.length; i++){
     let place = images[i];
@@ -70,7 +74,7 @@ for (let i = 0; i < images.length; i++){
     let activeThumbN = '';
     if (i == activeImage){
         activeClass = 'active';
-        activeThumbN  = 'active_thumbnail';
+        activeThumbN  = 'active-thumbnail';
     }
     imagesHtml.innerHTML += `
         <div class="box-img ${activeClass}">
@@ -87,5 +91,76 @@ for (let i = 0; i < images.length; i++){
             <img src="${place.url}" class ="thumbnail ${activeThumbN}" alt="${place.title}">
         </div>
     `;
-
 }
+
+// VARIABILI PER FRECCE
+const imagesElements = document.querySelectorAll('div.box-img');
+ console.log(imagesElements);
+
+ const thumbnailsElement = document.querySelectorAll('.thumbnails>img');
+ console.log(thumbnailsElement);
+
+ // FUNZIONI AVANTI --> E INDIETRO <--
+btnF.addEventListener(`click`, function(){
+    const imgActive = document.querySelector('div.active');
+    imgActive.classList.remove('active');
+
+    const thumbnailActive = document.querySelector('img.active-thumbnail'); 
+    thumbnailActive.classList.remove('active-thumbnail');                   
+
+     activeImage++;
+     if (activeImage === images.length){
+        activeImage = 0;
+     }
+     imagesElements[activeImage].classList.add('active');
+     thumbnailsElement[activeImage].classList.add('active-thumbnail');  
+});
+
+btnB.addEventListener(`click`, function(){
+    imagesElements[activeImage].classList.remove('active');
+    thumbnailsElement[activeImage].classList.remove('active-thumbnail');  
+    activeImage--;
+
+    if (activeImage === - 1){
+        activeImage = images.length - 1;
+     }
+
+    imagesElements[activeImage].classList.add('active');
+    thumbnailsElement[activeImage].classList.add('active-thumbnail');  
+});
+
+/*const array = [1, 2, 3];
+
+createCarousel(array);
+
+array.current(); // Returns "1"
+
+array.next(); // Returns "2"
+
+array.next(); // Returns "3"
+
+array.previous(); // Returns "2"
+
+array.reset(); // Returns "1"
+
+const createCarousel = (array) => {
+    array.index = 0;
+    array.current = function() {
+        this.index = this.index % array.len;
+        return array[this.index];
+    };
+    array.next = function() {
+        this.index++;
+        return this.current();
+    };
+    array.previous = function() {
+        this.index += array.len - 1;
+        return this.current();
+    };
+    array.reset = function() {
+        this.index = 0;
+        return array[0];
+    };
+};
+*/
+
