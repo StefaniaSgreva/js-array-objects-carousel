@@ -60,5 +60,32 @@ const images = [
     },
 ];
 
+const imagesHtml = document.querySelector('.mycontainer');
+const thumbnailsHtml = document.querySelector('.box-thumbnails'); 
 
+let activeImage = 0;
+for (let i = 0; i < images.length; i++){
+    let place = images[i];
+    let activeClass = '';
+    let activeThumbN = '';
+    if (i == activeImage){
+        activeClass = 'active';
+        activeThumbN  = 'active_thumbnail';
+    }
+    imagesHtml.innerHTML += `
+        <div class="box-img ${activeClass}">
+            <img src="${place.url}" class="slide_img" alt="${place.title}">  
+            <div class="slide-text">
+                <h2>${place.title}</h2>
+                <p>${place.description}</p>
+            </div>
+        </div>  
+    `;
 
+    thumbnailsHtml.innerHTML += `
+        <div class="thumbnails">
+            <img src="${place.url}" class ="thumbnail ${activeThumbN}" alt="${place.title}">
+        </div>
+    `;
+
+}
